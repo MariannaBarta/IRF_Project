@@ -59,6 +59,7 @@
             this.buttonOpenFile.TabIndex = 2;
             this.buttonOpenFile.Text = "Tallózás";
             this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             // 
             // dataGridView1
             // 
