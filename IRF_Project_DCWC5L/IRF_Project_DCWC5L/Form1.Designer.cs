@@ -139,6 +139,7 @@
             this.buttonAddList.TabIndex = 10;
             this.buttonAddList.Text = "Hozzáadás a megadjándékozottak listájához";
             this.buttonAddList.UseVisualStyleBackColor = true;
+            this.buttonAddList.Click += new System.EventHandler(this.buttonAddList_Click);
             // 
             // dataGridViewPersonList
             // 

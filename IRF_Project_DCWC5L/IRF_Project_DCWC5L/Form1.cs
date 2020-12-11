@@ -16,10 +16,13 @@ namespace IRF_Project_DCWC5L
     {
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
+        private AccountController _controller = new AccountController();
+
         public Form1()
         {
             InitializeComponent();
             dataGridViewCD.DataSource = CDList;
+            dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
         }
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
@@ -53,6 +56,19 @@ namespace IRF_Project_DCWC5L
             }
         }
 
-        
+        private void buttonAddList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _controller.Register(
+                    textBoxFullName.Text,
+                    textBoxShortName.Text,
+                    textBoxAccount.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
