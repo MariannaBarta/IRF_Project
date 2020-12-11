@@ -151,7 +151,7 @@
             // 
             // buttonSaveList
             // 
-            this.buttonSaveList.Location = new System.Drawing.Point(650, 112);
+            this.buttonSaveList.Location = new System.Drawing.Point(650, 167);
             this.buttonSaveList.Name = "buttonSaveList";
             this.buttonSaveList.Size = new System.Drawing.Size(119, 29);
             this.buttonSaveList.TabIndex = 12;
@@ -160,23 +160,23 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(650, 11);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(637, 9);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(120, 90);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(132, 136);
             this.pictureBoxLogo.TabIndex = 13;
             this.pictureBoxLogo.TabStop = false;
             // 
             // richTextBoxRandomCD
             // 
-            this.richTextBoxRandomCD.Location = new System.Drawing.Point(650, 257);
+            this.richTextBoxRandomCD.Location = new System.Drawing.Point(650, 308);
             this.richTextBoxRandomCD.Name = "richTextBoxRandomCD";
-            this.richTextBoxRandomCD.Size = new System.Drawing.Size(119, 166);
+            this.richTextBoxRandomCD.Size = new System.Drawing.Size(119, 115);
             this.richTextBoxRandomCD.TabIndex = 14;
             this.richTextBoxRandomCD.Text = "";
             // 
             // buttonAddPresent
             // 
-            this.buttonAddPresent.Location = new System.Drawing.Point(650, 167);
+            this.buttonAddPresent.Location = new System.Drawing.Point(650, 207);
             this.buttonAddPresent.Name = "buttonAddPresent";
             this.buttonAddPresent.Size = new System.Drawing.Size(119, 70);
             this.buttonAddPresent.TabIndex = 15;

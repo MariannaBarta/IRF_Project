@@ -17,12 +17,16 @@ namespace IRF_Project_DCWC5L
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
         private AccountController _controller = new AccountController();
+        
 
         public Form1()
         {
             InitializeComponent();
             dataGridViewCD.DataSource = CDList;
             dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
+            pictureBoxLogo.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.logo);
+            
+
         }
 
         private void buttonOpenFile_Click(object sender, EventArgs e)
