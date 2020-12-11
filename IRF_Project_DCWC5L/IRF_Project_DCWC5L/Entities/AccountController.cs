@@ -55,7 +55,7 @@ namespace IRF_Project_DCWC5L.Entities
         public bool ValidateFullName(string fullname)
         {
             return Regex.IsMatch(
-                fullname, @"^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$");
+                fullname, @"^[A-Z][a-z]{3,}\s[A-Z][a-z]{3,}$");
         }
 
         public bool ValidateShortName(string shortname)
