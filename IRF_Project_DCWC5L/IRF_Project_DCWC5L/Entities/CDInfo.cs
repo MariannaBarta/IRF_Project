@@ -8,11 +8,11 @@ namespace IRF_Project_DCWC5L.Entities
 {
     public class CDInfo
     {
-        public string Title { get; set; }
+        public string Cim { get; set; }
 
-        public string Artist { get; set; }
+        public string Eloado { get; set; }
 
-        public int PublicationYear { get; set; }
+        public int KiadasEve { get; set; }
 
     }
 }
