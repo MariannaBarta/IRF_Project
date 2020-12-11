@@ -51,7 +51,7 @@
     <Compile Include="Entities\AccountController.cs" />
     <Compile Include="Entities\AccountManager.cs" />
     <Compile Include="Entities\CDInfo.cs" />
-    <Compile Include="Entities\IAccountManager.cs" />
+    <Compile Include="Abstractions\IAccountManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelOpenFile = new System.Windows.Forms.Label();
             this.textBoxOpenFile = new System.Windows.Forms.TextBox();
             this.buttonOpenFile = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.richTextBoxRandomCD = new System.Windows.Forms.RichTextBox();
             this.buttonAddPresent = new System.Windows.Forms.Button();
+            this.timerRandomCD = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -157,6 +159,7 @@
             this.buttonSaveList.TabIndex = 12;
             this.buttonSaveList.Text = "Ajándéklista mentése";
             this.buttonSaveList.UseVisualStyleBackColor = true;
+            this.buttonSaveList.Click += new System.EventHandler(this.buttonSaveList_Click);
             // 
             // pictureBoxLogo
             // 
@@ -168,6 +171,7 @@
             // 
             // richTextBoxRandomCD
             // 
+            this.richTextBoxRandomCD.Enabled = false;
             this.richTextBoxRandomCD.Location = new System.Drawing.Point(650, 308);
             this.richTextBoxRandomCD.Name = "richTextBoxRandomCD";
             this.richTextBoxRandomCD.Size = new System.Drawing.Size(119, 115);
@@ -180,8 +184,14 @@
             this.buttonAddPresent.Name = "buttonAddPresent";
             this.buttonAddPresent.Size = new System.Drawing.Size(119, 70);
             this.buttonAddPresent.TabIndex = 15;
-            this.buttonAddPresent.Text = "Megajándékozom őt a kiválasztott CD-vel";
+            this.buttonAddPresent.Text = "Megajándékozom őt a kiválasztott albummal";
             this.buttonAddPresent.UseVisualStyleBackColor = true;
+            this.buttonAddPresent.Click += new System.EventHandler(this.buttonAddPresent_Click);
+            // 
+            // timerRandomCD
+            // 
+            this.timerRandomCD.Interval = 5000;
+            this.timerRandomCD.Tick += new System.EventHandler(this.timerRandomCD_Tick);
             // 
             // Form1
             // 
@@ -232,6 +242,7 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.RichTextBox richTextBoxRandomCD;
         private System.Windows.Forms.Button buttonAddPresent;
+        private System.Windows.Forms.Timer timerRandomCD;
     }
 }
 

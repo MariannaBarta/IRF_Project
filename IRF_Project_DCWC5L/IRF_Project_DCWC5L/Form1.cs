@@ -17,6 +17,7 @@ namespace IRF_Project_DCWC5L
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
         private AccountController _controller = new AccountController();
+        
 
 
         public Form1()
@@ -76,6 +77,25 @@ namespace IRF_Project_DCWC5L
             textBoxFullName.Clear();
             textBoxShortName.Clear();
             textBoxAccount.Clear();
+            timerRandomCD.Enabled = true;
+        }
+
+        private void timerRandomCD_Tick(object sender, EventArgs e)
+        {
+            //na itt van gáz
+            Random rnd = new Random();
+            int randomCD = rnd.Next(CDList.Count);
+            richTextBoxRandomCD.Text = CDList[randomCD].ToString();
+        }
+
+        private void buttonSaveList_Click(object sender, EventArgs e)
+        {
+            //na ez hiányzik
+        }
+
+        private void buttonAddPresent_Click(object sender, EventArgs e)
+        {
+            //meg ez is
         }
     }
 }
