@@ -17,7 +17,7 @@ namespace IRF_Project_DCWC5L
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
         private AccountController _controller = new AccountController();
-        
+
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace IRF_Project_DCWC5L
             dataGridViewCD.DataSource = CDList;
             dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
             pictureBoxLogo.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.logo);
-            
+
 
         }
 
@@ -73,6 +73,9 @@ namespace IRF_Project_DCWC5L
             {
                 MessageBox.Show(ex.Message);
             }
+            textBoxFullName.Clear();
+            textBoxShortName.Clear();
+            textBoxAccount.Clear();
         }
     }
 }

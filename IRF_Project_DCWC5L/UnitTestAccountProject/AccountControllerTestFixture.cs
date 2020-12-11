@@ -1,6 +1,7 @@
 ﻿using IRF_Project_DCWC5L.Entities;
 using NUnit.Framework;
 using System;
+using System.Activities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,5 +75,48 @@ namespace UnitTestAccountProject
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        public void TestRegisterHappyPath(string fullname, string shortname, string email)
+        {
+            // Arrange
+            var accountregController = new AccountController();
+
+            // Act
+            var actualregResult = accountregController.Register(fullname, shortname, email);
+
+            // Assert
+            Assert.AreEqual(fullname, actualregResult.TeljesNev);
+            Assert.AreEqual(shortname, actualregResult.BeceNev);
+            Assert.AreEqual(email, actualregResult.Email);
+        }
+
+        [
+            Test,
+            TestCase("kisskaroly", "k", "e-mailem.gmail.com"),
+            TestCase("Kiss Karoly", "Karesz", "e-mailem.gmail.com"),
+            TestCase("Kiss Karoly", "k", "kisskaroly@gmail.com"),
+            TestCase("kisskaroly", "Karesz", "kisskaroly@gmail.com"),
+            TestCase("kisskaroly", "k", "kisskaroly@gmail.com"),
+            TestCase("kisskaroly", "Karesz", "e-mailem.gmail.com"),
+            TestCase("Kiss Karoly", "k", "e-mailem.gmail.com"),
+        ]
+        public void TestRegisterValidateException(string fullname, string shortname, string email)
+        {
+            // Arrange
+            var accountregController = new AccountController();
+
+            // Act + Assert
+            try
+            {
+                var actualregResult = accountregController.Register(fullname, shortname, email);
+                Assert.Fail();
+            }
+            catch (Exception ex)
+            {
+                Assert.IsInstanceOf<ValidationException>(ex);
+            }
+
+        }
+
     }
 }
