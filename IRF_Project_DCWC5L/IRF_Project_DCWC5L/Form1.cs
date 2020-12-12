@@ -91,12 +91,11 @@ namespace IRF_Project_DCWC5L
             //na itt van gáz
             Random rnd = new Random();
             int randomCD = rnd.Next(CDList.Count);
-            richTextBoxRandomCD.Text = CDList[randomCD].ToString();
+            richTextBoxRandomCD.Text = CDList[randomCD].Eloado.ToString();
         }
 
         private void buttonSaveList_Click(object sender, EventArgs e)
         {
-            // meg itt
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = Application.StartupPath;
             sfd.Filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
@@ -108,10 +107,11 @@ namespace IRF_Project_DCWC5L
             {
                 string output = "";
                 sw.WriteLine(String.Format("Cím; Előadó; Kiadás éve; Teljes név; Becenév; iTunes Account"));
-                sw.WriteLine(output);
                 for (int i = 0; i < MyPresents.Count; i++)
                 {
-                    output += String.Format(MyPresents[i].ToString());
+                    output = ";";
+                    output += (MyPresents[i].Cim.ToString() + ";" + MyPresents[i].Eloado.ToString() + ";" + MyPresents[i].KiadasEve.ToString() + ";" +
+                        MyPresents[i].TeljesNev.ToString() + ";" + MyPresents[i].BeceNev.ToString() + ";" + MyPresents[i].Account.ToString());
 
                     sw.WriteLine(output);
                 }
@@ -124,7 +124,6 @@ namespace IRF_Project_DCWC5L
 
         private void buttonAddPresent_Click(object sender, EventArgs e)
         {
-            //ezt meg csak nem tudom, hogy működik-e XD
             PresentList lista = new PresentList();
 
             foreach (DataGridViewRow row in dataGridViewCD.SelectedRows)
