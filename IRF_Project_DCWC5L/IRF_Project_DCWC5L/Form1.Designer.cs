@@ -46,9 +46,15 @@
             this.richTextBoxRandomCD = new System.Windows.Forms.RichTextBox();
             this.buttonAddPresent = new System.Windows.Forms.Button();
             this.timerRandomCD = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewPresentList = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentList)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOpenFile
@@ -80,9 +86,9 @@
             // dataGridViewCD
             // 
             this.dataGridViewCD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCD.Location = new System.Drawing.Point(27, 54);
+            this.dataGridViewCD.Location = new System.Drawing.Point(27, 72);
             this.dataGridViewCD.Name = "dataGridViewCD";
-            this.dataGridViewCD.Size = new System.Drawing.Size(279, 369);
+            this.dataGridViewCD.Size = new System.Drawing.Size(279, 243);
             this.dataGridViewCD.TabIndex = 3;
             // 
             // labelFullName
@@ -146,9 +152,9 @@
             // dataGridViewPersonList
             // 
             this.dataGridViewPersonList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPersonList.Location = new System.Drawing.Point(355, 167);
+            this.dataGridViewPersonList.Location = new System.Drawing.Point(355, 185);
             this.dataGridViewPersonList.Name = "dataGridViewPersonList";
-            this.dataGridViewPersonList.Size = new System.Drawing.Size(258, 256);
+            this.dataGridViewPersonList.Size = new System.Drawing.Size(246, 130);
             this.dataGridViewPersonList.TabIndex = 11;
             // 
             // buttonSaveList
@@ -172,7 +178,7 @@
             // richTextBoxRandomCD
             // 
             this.richTextBoxRandomCD.Enabled = false;
-            this.richTextBoxRandomCD.Location = new System.Drawing.Point(650, 308);
+            this.richTextBoxRandomCD.Location = new System.Drawing.Point(650, 331);
             this.richTextBoxRandomCD.Name = "richTextBoxRandomCD";
             this.richTextBoxRandomCD.Size = new System.Drawing.Size(119, 115);
             this.richTextBoxRandomCD.TabIndex = 14;
@@ -193,11 +199,60 @@
             this.timerRandomCD.Interval = 5000;
             this.timerRandomCD.Tick += new System.EventHandler(this.timerRandomCD_Tick);
             // 
+            // dataGridViewPresentList
+            // 
+            this.dataGridViewPresentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPresentList.Location = new System.Drawing.Point(27, 351);
+            this.dataGridViewPresentList.Name = "dataGridViewPresentList";
+            this.dataGridViewPresentList.Size = new System.Drawing.Size(574, 95);
+            this.dataGridViewPresentList.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Zenei albumok listája:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(352, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Szeretnék ajándékot adni neki:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Összeállított ajándéklista";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(677, 315);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Album ajánló:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(794, 458);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewPresentList);
             this.Controls.Add(this.buttonAddPresent);
             this.Controls.Add(this.richTextBoxRandomCD);
             this.Controls.Add(this.pictureBoxLogo);
@@ -219,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +299,11 @@
         private System.Windows.Forms.RichTextBox richTextBoxRandomCD;
         private System.Windows.Forms.Button buttonAddPresent;
         private System.Windows.Forms.Timer timerRandomCD;
+        private System.Windows.Forms.DataGridView dataGridViewPresentList;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

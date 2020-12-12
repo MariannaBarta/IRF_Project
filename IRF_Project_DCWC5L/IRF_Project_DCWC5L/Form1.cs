@@ -19,7 +19,7 @@ namespace IRF_Project_DCWC5L
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
         List<PresentList> MyPresents = new List<PresentList>();
         private AccountController _controller = new AccountController();
-        
+
 
 
         public Form1()
@@ -27,6 +27,7 @@ namespace IRF_Project_DCWC5L
             InitializeComponent();
             dataGridViewCD.DataSource = CDList;
             dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
+            dataGridViewPresentList.DataSource = MyPresents;
             pictureBoxLogo.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.logo);
 
 
@@ -61,6 +62,8 @@ namespace IRF_Project_DCWC5L
                 var CDYear = (XmlElement)element.ChildNodes[5];
                 CD.KiadasEve = Int32.Parse(CDYear.InnerText);
             }
+
+            timerRandomCD.Enabled = true;
         }
 
         private void buttonAddList_Click(object sender, EventArgs e)
@@ -71,15 +74,16 @@ namespace IRF_Project_DCWC5L
                     textBoxFullName.Text,
                     textBoxShortName.Text,
                     textBoxAccount.Text);
+
+                textBoxFullName.Clear();
+                textBoxShortName.Clear();
+                textBoxAccount.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            textBoxFullName.Clear();
-            textBoxShortName.Clear();
-            textBoxAccount.Clear();
-            timerRandomCD.Enabled = true;
+
         }
 
         private void timerRandomCD_Tick(object sender, EventArgs e)
@@ -97,7 +101,7 @@ namespace IRF_Project_DCWC5L
             sfd.InitialDirectory = Application.StartupPath;
             sfd.Filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
             sfd.DefaultExt = "csv";
-            
+
             if (sfd.ShowDialog() != DialogResult.OK) return;
 
             using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
@@ -112,7 +116,7 @@ namespace IRF_Project_DCWC5L
                     sw.WriteLine(output);
                 }
             }
-            
+
 
 
 
@@ -121,25 +125,26 @@ namespace IRF_Project_DCWC5L
         private void buttonAddPresent_Click(object sender, EventArgs e)
         {
             //ezt meg csak nem tudom, hogy működik-e XD
-            PresentList listaelem = new PresentList();
+            PresentList lista = new PresentList();
 
             foreach (DataGridViewRow row in dataGridViewCD.SelectedRows)
             {
-                listaelem.Cim = row.Cells[0].Value.ToString();
-                listaelem.Eloado = row.Cells[1].Value.ToString();
-                listaelem.KiadasEve = Int32.Parse(row.Cells[2].Value.ToString());
+                lista.Cim = row.Cells[0].Value.ToString();
+                lista.Eloado = row.Cells[1].Value.ToString();
+                lista.KiadasEve = Int32.Parse(row.Cells[2].Value.ToString());
             }
 
             foreach (DataGridViewRow row in dataGridViewPersonList.SelectedRows)
             {
-                listaelem.TeljesNev = row.Cells[0].Value.ToString();
-                listaelem.BeceNev = row.Cells[1].Value.ToString();
-                listaelem.Account = row.Cells[2].Value.ToString();
+                lista.TeljesNev = row.Cells[0].Value.ToString();
+                lista.BeceNev = row.Cells[1].Value.ToString();
+                lista.Account = row.Cells[2].Value.ToString();
             }
 
-            MyPresents.Add(listaelem);
+            MyPresents.Add(lista);
+
         }
 
-        
+
     }
 }
