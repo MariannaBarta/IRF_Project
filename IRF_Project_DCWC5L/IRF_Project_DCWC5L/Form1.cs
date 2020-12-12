@@ -29,7 +29,7 @@ namespace IRF_Project_DCWC5L
             dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
             dataGridViewPresentList.DataSource = MyPresents;
             pictureBoxLogo.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.logo);
-
+            pictureBoxMusic.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.music);
 
         }
 
@@ -90,7 +90,7 @@ namespace IRF_Project_DCWC5L
         {
                       
             int randomCD = rnd.Next(CDList.Count);
-            richTextBoxRandomCD.Text = CDList[randomCD].Eloado.ToString() + Environment.NewLine + CDList[randomCD].Cim.ToString();
+            richTextBoxRandomCD.Text = CDList[randomCD].Eloado.ToString() + ":" + Environment.NewLine + CDList[randomCD].Cim.ToString();
             richTextBoxRandomCD.SelectAll();
             richTextBoxRandomCD.SelectionAlignment = HorizontalAlignment.Center;
             
@@ -118,9 +118,6 @@ namespace IRF_Project_DCWC5L
                     sw.WriteLine(output);
                 }
             }
-
-
-
 
         }
 

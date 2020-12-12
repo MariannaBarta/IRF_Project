@@ -34,5 +34,17 @@ namespace IRF_Project_DCWC5L.Properties {
                 this["logo"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Images/music_album.png")]
+        public string music {
+            get {
+                return ((string)(this["music"]));
+            }
+            set {
+                this["music"] = value;
+            }
+        }
     }
 }

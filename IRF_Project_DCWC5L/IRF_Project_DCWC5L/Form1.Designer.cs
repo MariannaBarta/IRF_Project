@@ -51,10 +51,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBoxMusic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMusic)).BeginInit();
             this.SuspendLayout();
             // 
             // labelOpenFile
@@ -75,6 +77,7 @@
             // 
             // buttonOpenFile
             // 
+            this.buttonOpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonOpenFile.Location = new System.Drawing.Point(231, 9);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(75, 23);
@@ -141,9 +144,10 @@
             // 
             // buttonAddList
             // 
-            this.buttonAddList.Location = new System.Drawing.Point(355, 112);
+            this.buttonAddList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddList.Location = new System.Drawing.Point(355, 108);
             this.buttonAddList.Name = "buttonAddList";
-            this.buttonAddList.Size = new System.Drawing.Size(258, 28);
+            this.buttonAddList.Size = new System.Drawing.Size(258, 43);
             this.buttonAddList.TabIndex = 10;
             this.buttonAddList.Text = "Hozzáadás a megadjándékozottak listájához";
             this.buttonAddList.UseVisualStyleBackColor = true;
@@ -154,14 +158,15 @@
             this.dataGridViewPersonList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPersonList.Location = new System.Drawing.Point(355, 185);
             this.dataGridViewPersonList.Name = "dataGridViewPersonList";
-            this.dataGridViewPersonList.Size = new System.Drawing.Size(246, 130);
+            this.dataGridViewPersonList.Size = new System.Drawing.Size(258, 130);
             this.dataGridViewPersonList.TabIndex = 11;
             // 
             // buttonSaveList
             // 
-            this.buttonSaveList.Location = new System.Drawing.Point(650, 167);
+            this.buttonSaveList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonSaveList.Location = new System.Drawing.Point(650, 151);
             this.buttonSaveList.Name = "buttonSaveList";
-            this.buttonSaveList.Size = new System.Drawing.Size(119, 29);
+            this.buttonSaveList.Size = new System.Drawing.Size(119, 43);
             this.buttonSaveList.TabIndex = 12;
             this.buttonSaveList.Text = "Ajándéklista mentése";
             this.buttonSaveList.UseVisualStyleBackColor = true;
@@ -169,9 +174,9 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Location = new System.Drawing.Point(637, 9);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(650, 9);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(132, 136);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(119, 119);
             this.pictureBoxLogo.TabIndex = 13;
             this.pictureBoxLogo.TabStop = false;
             // 
@@ -186,9 +191,10 @@
             // 
             // buttonAddPresent
             // 
-            this.buttonAddPresent.Location = new System.Drawing.Point(650, 207);
+            this.buttonAddPresent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAddPresent.Location = new System.Drawing.Point(650, 217);
             this.buttonAddPresent.Name = "buttonAddPresent";
-            this.buttonAddPresent.Size = new System.Drawing.Size(119, 70);
+            this.buttonAddPresent.Size = new System.Drawing.Size(119, 68);
             this.buttonAddPresent.TabIndex = 15;
             this.buttonAddPresent.Text = "Megajándékozom őt a kiválasztott albummal";
             this.buttonAddPresent.UseVisualStyleBackColor = true;
@@ -204,7 +210,7 @@
             this.dataGridViewPresentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPresentList.Location = new System.Drawing.Point(27, 351);
             this.dataGridViewPresentList.Name = "dataGridViewPresentList";
-            this.dataGridViewPresentList.Size = new System.Drawing.Size(574, 95);
+            this.dataGridViewPresentList.Size = new System.Drawing.Size(586, 95);
             this.dataGridViewPresentList.TabIndex = 16;
             // 
             // label1
@@ -219,7 +225,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(352, 158);
+            this.label2.Location = new System.Drawing.Point(352, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 13);
             this.label2.TabIndex = 18;
@@ -243,11 +249,20 @@
             this.label4.TabIndex = 20;
             this.label4.Text = "Album ajánló:";
             // 
+            // pictureBoxMusic
+            // 
+            this.pictureBoxMusic.Location = new System.Drawing.Point(677, 367);
+            this.pictureBoxMusic.Name = "pictureBoxMusic";
+            this.pictureBoxMusic.Size = new System.Drawing.Size(70, 70);
+            this.pictureBoxMusic.TabIndex = 21;
+            this.pictureBoxMusic.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 458);
+            this.Controls.Add(this.pictureBoxMusic);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -275,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPersonList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPresentList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMusic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,6 +320,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBoxMusic;
     }
 }
 

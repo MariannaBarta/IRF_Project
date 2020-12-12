@@ -5,5 +5,8 @@
     <Setting Name="logo" Type="System.String" Scope="User">
       <Value Profile="(Default)">Images/santa_music.PNG</Value>
     </Setting>
+    <Setting Name="music" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Images/music_album.png</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
