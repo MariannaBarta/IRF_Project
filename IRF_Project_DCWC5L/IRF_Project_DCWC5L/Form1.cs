@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace IRF_Project_DCWC5L
     {
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
+        List<PresentList> MyPresents = new List<PresentList>();
         private AccountController _controller = new AccountController();
         
 
@@ -90,12 +92,54 @@ namespace IRF_Project_DCWC5L
 
         private void buttonSaveList_Click(object sender, EventArgs e)
         {
-            //na ez hiányzik
+            // meg itt
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "CSV file (*.csv)|*.csv| All Files (*.*)|*.*";
+            sfd.DefaultExt = "csv";
+            
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+            {
+                string output = "";
+                sw.WriteLine(String.Format("Cím; Előadó; Kiadás éve; Teljes név; Becenév; iTunes Account"));
+                sw.WriteLine(output);
+                for (int i = 0; i < MyPresents.Count; i++)
+                {
+                    output += String.Format(MyPresents[i].ToString());
+
+                    sw.WriteLine(output);
+                }
+            }
+            
+
+
+
         }
 
         private void buttonAddPresent_Click(object sender, EventArgs e)
         {
-            //meg ez is
+            //ezt meg csak nem tudom, hogy működik-e XD
+            PresentList listaelem = new PresentList();
+
+            foreach (DataGridViewRow row in dataGridViewCD.SelectedRows)
+            {
+                listaelem.Cim = row.Cells[0].Value.ToString();
+                listaelem.Eloado = row.Cells[1].Value.ToString();
+                listaelem.KiadasEve = Int32.Parse(row.Cells[2].Value.ToString());
+            }
+
+            foreach (DataGridViewRow row in dataGridViewPersonList.SelectedRows)
+            {
+                listaelem.TeljesNev = row.Cells[0].Value.ToString();
+                listaelem.BeceNev = row.Cells[1].Value.ToString();
+                listaelem.Account = row.Cells[2].Value.ToString();
+            }
+
+            MyPresents.Add(listaelem);
         }
+
+        
     }
 }

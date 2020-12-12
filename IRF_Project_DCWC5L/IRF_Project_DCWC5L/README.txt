@@ -7,6 +7,7 @@ Feldolgozott tételek:
 - Timer használata
 
 Karácsonyi ajándékozást segítő lista készítéső program, amellyel könnyedén összeállíthatjuk, hogy melyik zeneszerető ismerősünknek milyen zenei albumot szeretnénk ajánédkozni karácsonyra.
+A Solution mappájában ott van a betöltendő XML fájl: cd_catalog.xml
 
 A proram részei:
 - a boltok polcain található zenei albumok adatait egy XML fájlból töltjük be egy DataGridView-ba
