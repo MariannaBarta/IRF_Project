@@ -17,9 +17,9 @@ namespace IRF_Project_DCWC5L
     {
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
-        List<PresentList> MyPresents = new List<PresentList>();
+        BindingList<PresentList> MyPresents = new BindingList<PresentList>();
         private AccountController _controller = new AccountController();
-
+        Random rnd = new Random();
 
 
         public Form1()
@@ -85,13 +85,15 @@ namespace IRF_Project_DCWC5L
             }
 
         }
-
+        
         private void timerRandomCD_Tick(object sender, EventArgs e)
         {
-            //na itt van gáz
-            Random rnd = new Random();
+                      
             int randomCD = rnd.Next(CDList.Count);
-            richTextBoxRandomCD.Text = CDList[randomCD].Eloado.ToString();
+            richTextBoxRandomCD.Text = CDList[randomCD].Eloado.ToString() + Environment.NewLine + CDList[randomCD].Cim.ToString();
+            richTextBoxRandomCD.SelectAll();
+            richTextBoxRandomCD.SelectionAlignment = HorizontalAlignment.Center;
+            
         }
 
         private void buttonSaveList_Click(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace IRF_Project_DCWC5L
                 sw.WriteLine(String.Format("Cím; Előadó; Kiadás éve; Teljes név; Becenév; iTunes Account"));
                 for (int i = 0; i < MyPresents.Count; i++)
                 {
-                    output = ";";
+                    
                     output += (MyPresents[i].Cim.ToString() + ";" + MyPresents[i].Eloado.ToString() + ";" + MyPresents[i].KiadasEve.ToString() + ";" +
                         MyPresents[i].TeljesNev.ToString() + ";" + MyPresents[i].BeceNev.ToString() + ";" + MyPresents[i].Account.ToString());
 
