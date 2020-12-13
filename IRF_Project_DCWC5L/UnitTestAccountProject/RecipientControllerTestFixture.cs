@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace UnitTestAccountProject
 {
-    class AccountControllerTestFixture
+    class RecipientControllerTestFixture
     {
         [
             Test,
@@ -21,10 +21,10 @@ namespace UnitTestAccountProject
         public void TestValidateEmail(string email, bool expectedResult)
         {
             // Arrange
-            var accountController = new AccountController();
+            var recipientController = new RecipientController();
 
             // Act
-            var actualResult = accountController.ValidateEmail(email);
+            var actualResult = recipientController.ValidateEmail(email);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -45,10 +45,10 @@ namespace UnitTestAccountProject
         public void TestValidateFullName(string fullname, bool expectedResult)
         {
             // Arrange
-            var accountController = new AccountController();
+            var recipientController = new RecipientController();
 
             // Act
-            var actualResult = accountController.ValidateFullName(fullname);
+            var actualResult = recipientController.ValidateFullName(fullname);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -67,10 +67,10 @@ namespace UnitTestAccountProject
         public void TestValidateShortName(string shortname, bool expectedResult)
         {
             // Arrange
-            var accountController = new AccountController();
+            var recipientController = new RecipientController();
 
             // Act
-            var actualResult = accountController.ValidateShortName(shortname);
+            var actualResult = recipientController.ValidateShortName(shortname);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
@@ -79,10 +79,10 @@ namespace UnitTestAccountProject
         public void TestRegisterHappyPath(string fullname, string shortname, string email)
         {
             // Arrange
-            var accountregController = new AccountController();
+            var recipientregController = new RecipientController();
 
             // Act
-            var actualregResult = accountregController.Register(fullname, shortname, email);
+            var actualregResult = recipientregController.Register(fullname, shortname, email);
 
             // Assert
             Assert.AreEqual(fullname, actualregResult.TeljesNev);
@@ -103,12 +103,12 @@ namespace UnitTestAccountProject
         public void TestRegisterValidateException(string fullname, string shortname, string email)
         {
             // Arrange
-            var accountregController = new AccountController();
+            var recipientregController = new RecipientController();
 
             // Act + Assert
             try
             {
-                var actualregResult = accountregController.Register(fullname, shortname, email);
+                var actualregResult = recipientregController.Register(fullname, shortname, email);
                 Assert.Fail();
             }
             catch (Exception ex)

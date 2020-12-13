@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\AccountController.cs" />
-    <Compile Include="Entities\AccountManager.cs" />
+    <Compile Include="Entities\Recipient.cs" />
+    <Compile Include="Entities\RecipientController.cs" />
+    <Compile Include="Entities\RecipientManager.cs" />
     <Compile Include="Entities\CDInfo.cs" />
-    <Compile Include="Abstractions\IAccountManager.cs" />
+    <Compile Include="Abstractions\IRecipientManager.cs" />
     <Compile Include="Entities\PresentList.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

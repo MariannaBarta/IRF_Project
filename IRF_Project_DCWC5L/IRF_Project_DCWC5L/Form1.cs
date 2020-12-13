@@ -18,7 +18,7 @@ namespace IRF_Project_DCWC5L
         string CurrentPath = "";
         BindingList<CDInfo> CDList = new BindingList<CDInfo>();
         BindingList<PresentList> MyPresents = new BindingList<PresentList>();
-        private AccountController _controller = new AccountController();
+        private RecipientController _reccontroller = new RecipientController();
         Random rnd = new Random();
 
 
@@ -26,7 +26,7 @@ namespace IRF_Project_DCWC5L
         {
             InitializeComponent();
             dataGridViewCD.DataSource = CDList;
-            dataGridViewPersonList.DataSource = _controller.AccountManager.Accounts;
+            dataGridViewPersonList.DataSource = _reccontroller.RecipientManager.Recipients;
             dataGridViewPresentList.DataSource = MyPresents;
             pictureBoxLogo.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.logo);
             pictureBoxMusic.BackgroundImage = Bitmap.FromFile(Properties.Settings.Default.music);
@@ -70,7 +70,7 @@ namespace IRF_Project_DCWC5L
         {
             try
             {
-                _controller.Register(
+                _reccontroller.Register(
                     textBoxFullName.Text,
                     textBoxShortName.Text,
                     textBoxAccount.Text);

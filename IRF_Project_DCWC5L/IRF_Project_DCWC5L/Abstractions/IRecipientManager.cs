@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace IRF_Project_DCWC5L.Entities
 {
-    public class Account
+    public interface IRecipientManager
     {
-        
-        public string TeljesNev { get; set; }
+        BindingList<Recipient> Recipients { get; }
 
-        public string BeceNev { get; set; }
-
-        public string Email { get; set; }
+        Recipient CreateRecipient(Recipient recipient);
     }
 }

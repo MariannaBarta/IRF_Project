@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace IRF_Project_DCWC5L.Entities
 {
-    public class AccountController
+    public class RecipientController
     {
-        public IAccountManager AccountManager { get; set; }
+        public IRecipientManager RecipientManager { get; set; }
 
-        public AccountController()
+        public RecipientController()
         {
-            AccountManager = new AccountManager();
+            RecipientManager = new RecipientManager();
         }
 
-        public Account Register(string fullname, string shortname, string email)
+        public Recipient Register(string fullname, string shortname, string email)
         {
             if (!ValidateFullName(fullname))
                 throw new ValidationException(
-                    "A megadott teljes név nem megfelelő! (Ne használj ékezeteket! A keresztnév és a vezetéknév is nagy betűvel kezdődjön, és legyen közöttük szóköz!");
+                    "A megadott teljes név nem megfelelő! Ne használj ékezeteket! A keresztnév és a vezetéknév is nagy betűvel kezdődjön, és legyen közöttük szóköz!");
 
             if (!ValidateShortName(shortname))
                 throw new ValidationException(
@@ -32,7 +32,7 @@ namespace IRF_Project_DCWC5L.Entities
                 throw new ValidationException(
                     "A megadott account nem megfelelő! Kérlek, valid e-mail címet használj!");
 
-            var account = new Account()
+            var recipient = new Recipient()
             {
                 TeljesNev = fullname,
                 BeceNev = shortname,
@@ -40,9 +40,9 @@ namespace IRF_Project_DCWC5L.Entities
 
             };
 
-            var newAccount = AccountManager.CreateAccount(account);
+            var newRecipient = RecipientManager.CreateRecipient(recipient);
 
-            return newAccount;
+            return newRecipient;
 
         }
         public bool ValidateEmail(string email)

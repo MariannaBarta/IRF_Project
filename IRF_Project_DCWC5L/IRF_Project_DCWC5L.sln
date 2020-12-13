@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRF_Project_DCWC5L", "IRF_Project_DCWC5L\IRF_Project_DCWC5L.csproj", "{E3A1C4C1-F0F7-4E58-9971-F6D04D1A2D8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestAccountProject", "UnitTestAccountProject\UnitTestAccountProject.csproj", "{E94C7332-8296-45F6-B074-43215E00E1CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestRecipientProject", "UnitTestAccountProject\UnitTestRecipientProject.csproj", "{E94C7332-8296-45F6-B074-43215E00E1CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
