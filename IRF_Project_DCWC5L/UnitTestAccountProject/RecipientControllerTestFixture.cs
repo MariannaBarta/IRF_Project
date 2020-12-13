@@ -14,9 +14,9 @@ namespace UnitTestAccountProject
         [
             Test,
             TestCase("abcd1234", false),
-            TestCase("irf@uni-corvinus", false),
-            TestCase("irf.uni-corvinus.hu", false),
-            TestCase("irf@uni-corvinus.hu", true)
+            TestCase("mari@gmail", false),
+            TestCase("mari.gmail.com", false),
+            TestCase("mari@gmail.com", true)
         ]
         public void TestValidateEmail(string email, bool expectedResult)
         {
@@ -75,7 +75,11 @@ namespace UnitTestAccountProject
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
-
+        [
+            Test,
+            TestCase("Kiss Karoly", "karesz", "kisskaroly@gmail.com"),
+            TestCase("Kiss Szandi", "Szandika", "szandi@gmail.com"),
+        ]
         public void TestRegisterHappyPath(string fullname, string shortname, string email)
         {
             // Arrange

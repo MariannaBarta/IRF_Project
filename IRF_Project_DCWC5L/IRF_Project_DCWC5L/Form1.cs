@@ -36,6 +36,8 @@ namespace IRF_Project_DCWC5L
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             betoltes();
+
+            timerRandomCD.Enabled = true;
         }
 
         private void betoltes()
@@ -62,8 +64,7 @@ namespace IRF_Project_DCWC5L
                 var CDYear = (XmlElement)element.ChildNodes[5];
                 CD.KiadasEve = Int32.Parse(CDYear.InnerText);
             }
-
-            timerRandomCD.Enabled = true;
+            
         }
 
         private void buttonAddList_Click(object sender, EventArgs e)
@@ -111,9 +112,9 @@ namespace IRF_Project_DCWC5L
                 sw.WriteLine(String.Format("Cím; Előadó; Kiadás éve; Teljes név; Becenév; iTunes Account"));
                 for (int i = 0; i < MyPresents.Count; i++)
                 {
-                    
-                    output += (MyPresents[i].Cim.ToString() + ";" + MyPresents[i].Eloado.ToString() + ";" + MyPresents[i].KiadasEve.ToString() + ";" +
-                        MyPresents[i].TeljesNev.ToString() + ";" + MyPresents[i].BeceNev.ToString() + ";" + MyPresents[i].Account.ToString());
+                    var presentItem = MyPresents[i];
+                    output = (presentItem.Cim.ToString() + ";" + presentItem.Eloado.ToString() + ";" + presentItem.KiadasEve.ToString() + ";" +
+                        presentItem.TeljesNev.ToString() + ";" + presentItem.BeceNev.ToString() + ";" + presentItem.Account.ToString());
 
                     sw.WriteLine(output);
                 }
