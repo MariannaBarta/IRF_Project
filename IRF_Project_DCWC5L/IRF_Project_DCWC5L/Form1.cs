@@ -58,7 +58,7 @@ namespace IRF_Project_DCWC5L
                 CD.Eloado = CDArtist.InnerText;
 
                 var CDYear = (XmlElement)element.ChildNodes[5];
-                CD.KiadasEve = Int32.Parse(CDYear.InnerText);
+                CD.KiadasEve = int.Parse(CDYear.InnerText);
             }
             
         }
