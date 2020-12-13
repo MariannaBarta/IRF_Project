@@ -7,6 +7,7 @@ Feldolgozott tételek:
 - Unit Test megvalósítása (int, string, bool - min. 3 teszteset)
 - Írás CSV fájlba
 - Timer használata
++ véletlenszám generálás és felhasználás
 
 Részletes leírás:
 Karácsonyi ajándékozást segítő lista készítéső program, amellyel könnyedén összeállíthatjuk, hogy melyik zeneszerető ismerősünknek milyen zenei albumot szeretnénk ajánédkozni karácsonyra, és az elkészített listát le is tudjuk menteni.
@@ -88,5 +89,3 @@ RecipientControllerTestFixture:
 - telepített tesztcsomagok: NUnit, NUnit3TestAdapter, Moq (és függőségei)
 - a 3 validációs metódusra + a Register függvényre készítettem teszteket
 - futtatásnál minden teszt a tesztesetekben megadott, várt eredményt adta, tehát megfelelően működik a regisztrálás és a validáció
-
-
