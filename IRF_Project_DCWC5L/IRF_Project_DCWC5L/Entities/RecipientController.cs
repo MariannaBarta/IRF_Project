@@ -21,16 +21,16 @@ namespace IRF_Project_DCWC5L.Entities
         {
             if (!ValidateFullName(fullname))
                 throw new ValidationException(
-                    "A megadott teljes név nem megfelelő! Ne használj ékezeteket! A keresztnév és a vezetéknév is nagy betűvel kezdődjön, és legyen közöttük szóköz!");
+                    "A megadott teljes név nem megfelelő! (Ne használj ékezeteket! A keresztnév és a vezetéknév is nagy betűvel kezdődjön, és legyen közöttük szóköz!)");
 
             if (!ValidateShortName(shortname))
                 throw new ValidationException(
-                    "A megadott becenév nem megfelelő! Kérlek, ne használj ékezeteket, csak az angol ABC beűtit! A becenév egyetlen rövid szóból állhat!");
+                    "A megadott becenév nem megfelelő! (Kérlek, ne használj ékezeteket, csak az angol ABC beűtit! A becenév egyetlen rövid szóból állhat!)");
 
 
             if (!ValidateEmail(email))
                 throw new ValidationException(
-                    "A megadott account nem megfelelő! Kérlek, valid e-mail címet használj!");
+                    "A megadott account nem megfelelő! (Kérlek, valid e-mail címet használj!)");
 
             var recipient = new Recipient()
             {

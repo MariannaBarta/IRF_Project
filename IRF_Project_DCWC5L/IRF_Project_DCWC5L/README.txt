@@ -80,7 +80,7 @@ C) Form1:
 D) Images mappa:
 - program logója és zenei album ikon van itt tárolva, ezeket a Properties Settings beállításain keresztül kötöttem a Form1-hez
 
-UnitTestRecipientProjecten belül
+UnitTestAccountProjecten belül
 
 a)
 RecipientControllerTestFixture:
